@@ -1,8 +1,32 @@
-﻿@{
+﻿@model List<JobInJaModel>
+@{
     ViewData["Title"] = "Home Page";
 }
+
+<style>
+    li {
+        font-family: "Arial Unicode MS", "Lucida Sans Unicode" !important;
+    }
+</style>
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>
+            <h1>@item.Title</h1>
+            <h2>@item.Company</h2>
+            <h2>@item.Location</h2>
+            <h2>@item.ContractType</h2>
+            <img src="@item.Image" />
+        </li>
+
+    }
+
+
+</ul>
